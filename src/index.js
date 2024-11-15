@@ -11,7 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 
 const cors = require('cors'); // Import the cors middleware
 // Middleware to enable CORS for all routes
-app.use(cors({ origin: 'http://localhost:5173' })); 
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://stately-macaron-44880a.netlify.app'], // Add your Netlify URL here
+}));
 
 // Books router for /books endpoint
 app.use('/', bookRouter);
